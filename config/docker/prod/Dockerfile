@@ -7,8 +7,8 @@ WORKDIR /app
 # Copy package.json and package-lock.json
 COPY ../../package*.json ./
 
-# Install dependencies
-RUN npm install
+# Remove node_modules and package-lock.json, then install dependencies
+RUN rm -rf node_modules package-lock.json && npm install
 
 # Copy the rest of the application code
 COPY ../../ .
@@ -22,8 +22,8 @@ FROM nginx:alpine
 # Copy the built React app to the Nginx html directory
 COPY --from=0 /app/dist /usr/share/nginx/html
 
-# Expose port 80
-EXPOSE 80
+# Expose port 8080
+EXPOSE 7777
 
 # Start Nginx
 CMD ["nginx", "-g", "daemon off;"]
