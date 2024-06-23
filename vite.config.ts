@@ -7,5 +7,12 @@ export default defineConfig({
   server: {
     port: 7777,
   },
+  css: {
+    modules: {
+      scopeBehaviour: 'local', // default is 'local', can be 'global'
+      generateScopedName: '[name]__[local]___[hash:base64:5]', // custom naming pattern
+      hashPrefix: 'my-custom-hash', // optional, default is empty string
+    },
+  },
 
 })

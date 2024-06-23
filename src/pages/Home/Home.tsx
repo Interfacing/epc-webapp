@@ -31,7 +31,7 @@ export const Home = () => {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
+        <Button label={`count is ${count}`} onClick={() => setCount((count) => count + 1)} primary={true} />
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
