@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Button } from '../../components/Button/Button';
+import { Button } from '../../../shared/ui/Button/Button';
 import viteLogo from '/vite.svg';
-import reactLogo from '../../assets/react.svg';
+import reactLogo from '../../../shared/assets/icons/react.svg';
 
 export const Home = () => {
   const { t, i18n } = useTranslation();
