@@ -4,6 +4,9 @@ import react from '@vitejs/plugin-react-swc'
 // https://vitejs.dev/config/
 export default defineConfig({
   base: '/webclient/',
+  build: {
+    outDir: 'dist',
+  },
   plugins: [react()],
   server: {
     port: 7777,

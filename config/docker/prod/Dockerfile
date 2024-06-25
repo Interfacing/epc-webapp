@@ -5,24 +5,27 @@ FROM node:20.14.0
 WORKDIR /app
 
 # Copy package.json and package-lock.json
-COPY ../../package*.json ./
+COPY ./package*.json ./
 
 # Remove node_modules and package-lock.json, then install dependencies
 RUN rm -rf node_modules package-lock.json && npm install
 
 # Copy the rest of the application code
-COPY ../../ .
+COPY . .
 
 # Build the React app
 RUN npm run build
 
 # Use an official Nginx image to serve the React app
-FROM nginx:alpine
+FROM nginx:1.25.5-alpine
 
 # Copy the built React app to the Nginx html directory
 COPY --from=0 /app/dist /usr/share/nginx/html
 
-# Expose port 8080
+# Copy custom Nginx configuration if needed
+COPY ./config/docker/prod/nginx.conf /etc/nginx/nginx.conf
+
+# Expose port 7777
 EXPOSE 7777
 
 # Start Nginx
