@@ -1,0 +1,10 @@
+services:
+  webappclient:
+      build:
+        context: ../../..
+        dockerfile: ./config/docker/dev/Dockerfile
+      ports:
+        - 7777:7777
+      volumes:
+        - ../../..:/app
+        - /app/node_modules

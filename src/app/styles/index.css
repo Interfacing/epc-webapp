@@ -1,0 +1,6 @@
+@import 'reset';
+@import 'variables/global.css';
+
+#root {
+  font: var(--font-m);
+}

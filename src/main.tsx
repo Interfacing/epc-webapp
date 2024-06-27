@@ -1,14 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { I18nextProvider } from 'react-i18next';
-import App from './App.tsx';
-import i18n from './assets/i18n.ts';
-import './index.css';
+import App from './app/App.tsx';
+import i18n from './shared/assets/i18n.ts';
+import './app/styles/index.css';
+import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <I18nextProvider i18n={i18n}>
-      <App />
-    </I18nextProvider>
+    {/* <BrowserRouter basename='/webclient/'> */}
+    <BrowserRouter>
+      <I18nextProvider i18n={i18n}>
+        <App />
+      </I18nextProvider>
+    </BrowserRouter>
   </React.StrictMode>,
 );

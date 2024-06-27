@@ -1,0 +1,10 @@
+services:
+  webclient:
+      build:
+        context: ../../..
+        dockerfile: ./config/docker/prod/Dockerfile
+      ports:
+        - 80:80
+      volumes:
+        - ../../..:/app
+        - /app/node_modules

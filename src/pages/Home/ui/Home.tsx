@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Button } from '../../components/Button/Button';
+import { Button } from '../../../shared/ui/Button/Button';
 import viteLogo from '/vite.svg';
-import reactLogo from '../../assets/react.svg';
+import reactLogo from '../../../shared/assets/icons/react.svg';
 
 export const Home = () => {
   const { t, i18n } = useTranslation();
@@ -31,7 +31,7 @@ export const Home = () => {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
+        <Button label={`count is ${count}`} onClick={() => setCount((count) => count + 1)} primary={true} />
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
