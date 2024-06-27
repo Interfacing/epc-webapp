@@ -4,7 +4,7 @@ services:
         context: ../../..
         dockerfile: ./config/docker/prod/Dockerfile
       ports:
-        - 7777:7777
+        - 80:80
       volumes:
         - ../../..:/app
         - /app/node_modules
